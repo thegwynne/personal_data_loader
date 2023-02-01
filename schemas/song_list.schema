@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Id",
+        "type": "INT64"
+    },
+    {
+        "name": "Title",
+        "type": "STRING"
+    },
+    {
+        "name": "Artist",
+        "type": "STRING"
+    },
+    {
+        "name": "Year",
+        "type": "INT64"
+    },
+    {
+        "name": "Duo",
+        "type": "INT64"
+    },
+    {
+        "name": "Explicit",
+        "type": "INT64"
+    },
+    {
+        "name": "Date_Added",
+        "type": "DATE"
+    },
+    {
+        "name": "Styles",
+        "type": "STRING"
+    },
+    {
+        "name": "Languages",
+        "type": "STRING"
+    },
+    {
+        "name": "Inserted_Timestamp",
+        "type": "DATETIME"
+    },
+    {
+        "name": "Filename",
+        "type": "STRING"
+    }
+]

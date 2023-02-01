@@ -1,0 +1,34 @@
+[
+    {
+        "name": "pronounced",
+        "type": "STRING"
+    },
+    {
+        "name": "stress_pattern",
+        "type": "STRING"
+    },
+    {
+        "name": "syllable_count",
+        "type": "STRING"
+    },
+    {
+        "name": "word",
+        "type": "STRING"
+    },
+    {
+        "name": "word_frequency",
+        "type": "STRING"
+    },
+    {
+        "name": "word_type",
+        "type": "STRING"
+    },
+    {
+        "name": "Inserted_Timestamp",
+        "type": "DATETIME"
+    },
+    {
+        "name": "Filename",
+        "type": "STRING"
+    }
+]

@@ -1,0 +1,94 @@
+[
+    {
+        "name": "ts",
+        "type": "DATETIME"
+    },
+    {
+        "name": "username",
+        "type": "STRING"
+    },
+    {
+        "name": "platform",
+        "type": "STRING"
+    },
+    {
+        "name": "ms_played",
+        "type": "STRING"
+    },
+    {
+        "name": "conn_country",
+        "type": "STRING"
+    },
+    {
+        "name": "ip_addr_decrypted",
+        "type": "STRING"
+    },
+    {
+        "name": "user_agent_decrypted",
+        "type": "STRING"
+    },
+    {
+        "name": "master_metadata_track_name",
+        "type": "STRING"
+    },
+    {
+        "name": "master_metadata_album_artist_name",
+        "type": "STRING"
+    },
+    {
+        "name": "master_metadata_album_album_name",
+        "type": "STRING"
+    },
+    {
+        "name": "spotify_track_uri",
+        "type": "STRING"
+    },
+    {
+        "name": "episode_name",
+        "type": "STRING"
+    },
+    {
+        "name": "episode_show_name",
+        "type": "STRING"
+    },
+    {
+        "name": "spotify_episode_uri",
+        "type": "STRING"
+    },
+    {
+        "name": "reason_start",
+        "type": "STRING"
+    },
+    {
+        "name": "reason_end",
+        "type": "STRING"
+    },
+    {
+        "name": "shuffle",
+        "type": "BOOLEAN"
+    },
+    {
+        "name": "skipped",
+        "type": "STRING"
+    },
+    {
+        "name": "offline",
+        "type": "STRING"
+    },
+    {
+        "name": "offline_timestamp",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "incognito_mode",
+        "type": "STRING"
+    },
+    {
+        "name": "Inserted_Timestamp",
+        "type": "INT64"
+    },
+    {
+        "name": "Filename",
+        "type": "STRING"
+    }
+]
