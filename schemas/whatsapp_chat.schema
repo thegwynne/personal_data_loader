@@ -1,0 +1,22 @@
+[
+    {
+        "name": "timestamp",
+        "type": "DATETIME"
+    },
+    {
+        "name": "sender",
+        "type": "STRING"
+    },
+    {
+        "name": "message",
+        "type": "STRING"
+    },
+    {
+        "name": "Inserted_Timestamp",
+        "type": "DATETIME"
+    },
+    {
+        "name": "Filename",
+        "type": "STRING"
+    }
+]

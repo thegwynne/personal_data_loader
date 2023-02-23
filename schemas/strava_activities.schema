@@ -1,0 +1,310 @@
+[
+        {
+            "name": "Activity_ID",
+            "type": "STRING"
+        },
+        {
+            "name": "Activity_Date",
+            "type": "DATETIME"
+        },
+        {
+            "name": "Activity_Name",
+            "type": "STRING"
+        },
+        {
+            "name": "Activity_Type",
+            "type": "STRING"
+        },
+        {
+            "name": "Activity_Description",
+            "type": "STRING"
+        },
+        {
+            "name": "Elapsed_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Distance",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Heart_Rate",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Relative_Effort",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Commute",
+            "type": "BOOLEAN"
+        },
+        {
+            "name": "Activity_Private_Note",
+            "type": "STRING"
+        },
+        {
+            "name": "Activity_Gear",
+            "type": "STRING"
+        },
+        {
+            "name": "Raw_Filename",
+            "type": "STRING"
+        },
+        {
+            "name": "Athlete_Weight",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Bike_Weight",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Elapsed_Time1",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Moving_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Distance1",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Speed",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Speed",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Elevation_Gain",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Elevation_Loss",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Elevation_Low",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Elevation_High",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Grade",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Grade",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Positive_Grade",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Negative_Grade",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Cadence",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Cadence",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Heart_Rate1",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Heart_Rate",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Watts",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Watts",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Calories",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Max_Temperature",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Average_Temperature",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Relative_Effort1",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Total_Work",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Number_of_Runs",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Uphill_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Downhill_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Other_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Perceived_Exertion",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weighted_Average_Power",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Power_Count",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Prefer_Perceived_Exertion",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Perceived_Relative_Effort",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Commute1",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Total_Weight_Lifted",
+            "type": "FLOAT"
+        },
+        {
+            "name": "From_Upload",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Grade_Adjusted_Distance",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weather_Observation_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weather_Condition",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weather_Temperature",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Apparent_Temperature",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Dewpoint",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Humidity",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weather_Pressure",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Wind_Speed",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Wind_Gust",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Wind_Bearing",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Precipitation_Intensity",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Sunrise_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Sunset_Time",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Moon_Phase",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Bike",
+            "type": "STRING"
+        },
+        {
+            "name": "Gear",
+            "type": "STRING"
+        },
+        {
+            "name": "Precipitation_Probability",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Precipitation_Type",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Cloud_Cover",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weather_Visibility",
+            "type": "FLOAT"
+        },
+        {
+            "name": "UV_Index",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Weather_Ozone",
+            "type": "FLOAT"
+        },
+        {
+            "name": "Media",
+            "type": "STRING"
+        },
+        {
+            "name": "Inserted_Timestamp",
+            "type": "DATETIME"
+        },
+        {
+            "name": "Filename",
+            "type": "STRING"
+        }
+]
