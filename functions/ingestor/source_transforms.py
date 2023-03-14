@@ -14,8 +14,18 @@ def transform_song_list(dataframe, schema):
     dataframe = proc_datatypes(dataframe, schema)
     return dataframe
 
+def transform_whatsapp_chat(dataframe, schema):
+    dataframe = proc_datatypes(dataframe, schema)
+    return dataframe
+
+def transform_strava_activities(dataframe, schema):
+    dataframe = proc_datatypes(dataframe, schema)
+    return dataframe
+
 transform_switcher = {
     "streaming_history_extended": transform_streaming_history_extended,
     "word_stresses": transform_word_stresses,
-    "song_list": transform_song_list
+    "song_list": transform_song_list,
+    "whatsapp_chat": transform_whatsapp_chat,
+    "strava_activities": transform_strava_activities
 }

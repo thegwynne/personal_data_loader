@@ -9,7 +9,8 @@ def proc_datatypes(dataframe, schema):
 #Handle float columns - remove readability aids (commas, parentheses)
     floatcolumns = [col.name for col in schema if col.field_type == 'FLOAT']
     for col in floatcolumns:
-        dataframe[col] = dataframe[col].str.replace(',','').str.replace('(','').str.replace(')','')
+        if dataframe[col].dtype not in ['float64', 'int64']:
+            dataframe[col] = dataframe[col].str.replace(',','').str.replace('(','').str.replace(')','')
         dataframe[col] = dataframe[col].astype(float)
 #Handle date columns - convert to type, and remove empty values
     datecolumns = [col.name for col in schema if col.field_type == 'DATE' or col.field_type == 'DATETIME']
@@ -29,7 +30,8 @@ def string_clean(inputstr: str):
                   .replace('%', 'PCT').replace('-','_')\
                   .replace('+','PLUS').replace('(','_')\
                   .replace(')','_').replace(':','__')\
-                  .replace(',','__').replace('/','_')
+                  .replace(',','__').replace('/','_')\
+                  .replace('.', '')
 
 
 

@@ -67,11 +67,23 @@ def main(event, context = None):
 
     file_name = event.get("name")
     table_name = file_name.split('/')[0]
+
     dataset_name = dataset_switcher.get(table_name)
+    proc_function = transform_switcher.get(table_name)
+    load_function = load_switcher.get(table_name)
+    if not dataset_name:
+        print(f"No target dataset configured for table name: {table_name}") 
+        return
+    if not dataset_name:
+        print(f"No load function configured for table name: {table_name}") 
+        return
+    if not dataset_name:
+        print(f"No transform function for table name: {table_name}") 
+        return
+
     project_dataset_table = project_id + '.' + dataset_name + '.' + table_name
     just_file = file_name.split('/')[1]
     try:
-        load_function = load_switcher.get(table_name)
         df = load_function('gs://' + landing_zone_bucket_name + '/' + file_name)
     except Exception as e:
         print("Error loading file into dataframe")
@@ -89,7 +101,6 @@ def main(event, context = None):
     
     try:
         df = augment_dataframe(df, just_file)
-        proc_function = transform_switcher.get(table_name)
         df = proc_function(df, schema)
     except Exception as e:
         print("Error processing dataframe")
@@ -111,18 +122,19 @@ def main(event, context = None):
 
 
 
-# #########################################################################################
-# def findarrowerrors(table_name, dataframe, schema):
-#     successes = []
-#     fails = []
-#     for i in range(len(dataframe.columns)):
-#         minidf = pd.DataFrame(dataframe[dataframe.columns[i]])
-#         minischema = [schema[i]]
-#         job_config = bigquery.LoadJobConfig(write_disposition="WRITE_APPEND",create_disposition="CREATE_IF_NEEDED",schema=minischema)
-#         try:
-#             job = bq_client.load_table_from_dataframe(minidf,project_id + '.' + dataset_name + '.' + table_name,job_config=job_config)
-#             job.result()
-#             successes.append(schema[i].name)
-#         except:
-#             fails.append(schema[i].name)
-#     return successes, fails
+#########################################################################################
+def findarrowerrors(table_name, dataframe, schema):
+    successes = []
+    fails = []
+    dataset_name = dataset_switcher.get(table_name) 
+    for i in range(len(dataframe.columns)):
+        minidf = pd.DataFrame(dataframe[dataframe.columns[i]])
+        minischema = [schema[i]]
+        job_config = bigquery.LoadJobConfig(write_disposition="WRITE_APPEND",create_disposition="CREATE_IF_NEEDED",schema=minischema)
+        try:
+            job = bq_client.load_table_from_dataframe(minidf,project_id + '.' + dataset_name + '.' + table_name,job_config=job_config)
+            job.result()
+            successes.append(schema[i].name)
+        except:
+            fails.append(schema[i].name)
+    return successes, fails
