@@ -1,0 +1,10 @@
+# Function dependencies, for example:
+# package>=version
+fsspec
+gcsfs
+pandas
+pyarrow
+google-cloud-bigquery
+google-cloud-storage
+google-cloud-secret-manager
+db-dtypes
