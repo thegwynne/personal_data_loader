@@ -2,6 +2,8 @@ from google.cloud import storage, bigquery
 import pandas as pd
 from datetime import datetime
 import json
+import logging
+
 from helpers import string_clean, augment_dataframe
 
 from source_loaders import load_switcher
@@ -72,13 +74,13 @@ def main(event, context = None):
     proc_function = transform_switcher.get(table_name)
     load_function = load_switcher.get(table_name)
     if not dataset_name:
-        print(f"No target dataset configured for table name: {table_name}") 
+        logging.error(f"No target dataset configured for table name: {table_name}") 
         return
     if not dataset_name:
-        print(f"No load function configured for table name: {table_name}") 
+        logging.error(f"No load function configured for table name: {table_name}") 
         return
     if not dataset_name:
-        print(f"No transform function for table name: {table_name}") 
+        logging.error(f"No transform function for table name: {table_name}") 
         return
 
     project_dataset_table = project_id + '.' + dataset_name + '.' + table_name
@@ -86,7 +88,7 @@ def main(event, context = None):
     try:
         df = load_function('gs://' + landing_zone_bucket_name + '/' + file_name)
     except Exception as e:
-        print("Error loading file into dataframe")
+        logging.error("Error loading file into dataframe")
         print(e)
         move_gcs_file(landing_zone_bucket_name, error_bucket_name, file_name)
         return
@@ -94,7 +96,7 @@ def main(event, context = None):
     try:
         schema = get_schema(table_name)
     except Exception as e:
-        print("Error acquiring schema")
+        logging.error("Error acquiring schema")
         print(e)
         move_gcs_file(landing_zone_bucket_name, error_bucket_name, file_name)
         return
@@ -103,7 +105,7 @@ def main(event, context = None):
         df = augment_dataframe(df, just_file)
         df = proc_function(df, schema)
     except Exception as e:
-        print("Error processing dataframe")
+        logging.error("Error processing dataframe")
         print(e)
         move_gcs_file(landing_zone_bucket_name, error_bucket_name, file_name)
         return
@@ -112,11 +114,11 @@ def main(event, context = None):
         job = bq_client.load_table_from_dataframe(df,project_dataset_table,job_config=job_config)
         job.result()
     except Exception as e:
-        print("Error writing to bq")
+        logging.error("Error writing to bq")
         print(e)
         move_gcs_file(landing_zone_bucket_name, error_bucket_name, file_name)
         return
-    print("Data written to bq")
+    logging.info("Data written to bq")
     move_gcs_file(landing_zone_bucket_name, archive_bucket_name, file_name)
     return
 
